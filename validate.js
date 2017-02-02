@@ -1,8 +1,17 @@
+'use strict'
+
 const validate = (timestamp) => {
-    //var date = new Date(timestamp)
-    //return (date instanceof Date && !isNaN(date.valueOf()))
     
-    return true
+    let d = null
+    
+    if (parseInt(timestamp)){
+        d = new Date(parseInt(timestamp) * 1000)
+    } else {
+        d = new Date(timestamp)
+    }
+    
+    if (d != "Invalid Date") return true
+    return false
 }
 
 module.exports = validate
